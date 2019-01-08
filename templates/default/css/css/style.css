@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700,900");
+@import url("https://fonts.googleapis.com/css?family=Raleway:200,300,400,500");
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+.card-parent,
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-parent {
+  position: relative;
+  height: 100vh;
+}
+.card-parent > * {
+  margin: 10px;
+}
+
+button,
+.card {
+  border-radius: 3px;
+  color: white;
+  background: #F36A63;
+}
+
+button {
+  width: 150px;
+  height: 40px;
+  border: none;
+  outline: none;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: 0.4s all;
+  cursor: pointer;
+}
+button:hover {
+  animation: pulse 2.4s ease infinite;
+  transition: 0.4s all;
+  background: #f47871;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1.02);
+  }
+  50% {
+    transform: scale(0.99);
+  }
+  100% {
+    transform: scale(1.02);
+  }
+}
+.card {
+  position: absolute;
+  width: 270px;
+  height: 150px;
+  left: 50%;
+  margin-left: -134px;
+  transform: scale(0) translateY(-300px);
+  opacity: 0;
+  transition: 0.4s all;
+  flex-direction: column;
+  background: linear-gradient(#f47871, #F36A63);
+}
+.card > * {
+  margin: 6px;
+}
+
+.show {
+  transform: scale(1) translateY(-120px);
+  opacity: 1;
+  transition: 0.4s all;
+}
+
+.close {
+  position: absolute;
+  top: 7px;
+  right: 5px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.close:before, .close:after {
+  position: absolute;
+  content: '';
+  left: 8px;
+  width: 3px;
+  height: 15px;
+  background: white;
+}
+.close:before, .close:after {
+  transition: 0.4s all;
+}
+.close:before {
+  transform: rotate(-40deg);
+}
+.close:after {
+  transform: rotate(40deg);
+}
+
+.code {
+  background-color: white;
+  color: #F36A63;
+  padding: 5px;
+  letter-spacing: 1.7px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+::selection {
+  background: #80DED9;
+}
+
+::-moz-selection {
+  background: #80DED9;
+}
